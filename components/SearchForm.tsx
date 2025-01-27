@@ -5,7 +5,7 @@ export default function SearchForm({ query }: { query?: string }) {
     <Form
       action="/"
       scroll={false}
-      className="search-form flex items-center bg-white rounded-lg border-2 border-white"
+      className="search-form flex items-center bg-white rounded-lg border-2 border-black"
     >
       <input
         type="text"
@@ -16,7 +16,7 @@ export default function SearchForm({ query }: { query?: string }) {
       />
       <button
         type="submit"
-        className="search-btn bg-black text-white px-4 py-2 rounded-r-lg hover:bg-gray-800"
+        className="search-btn bg-black text-white px-4 py-2 hover:bg-gray-800"
       >
         Search
       </button>

@@ -1,5 +1,7 @@
 import "./style.css";
 import SearchForm from "../../components/SearchForm";
+import { posts } from "@/db/fake-db";
+import StartupCard from "@/components/StartupCard";
 
 export default async function Home({
   searchParams,
@@ -15,11 +17,25 @@ export default async function Home({
           Pitch your startup <br />
           Connect with entreperneurs
         </h1>
-        <h2 className="text-2xl font-bold text-center">
+        <p className="text-2xl font-bold text-center">
           Submit Ideas, Vote on Pitches, and Get Noticed in Virtual
           Competitions.
-        </h2>
+        </p>
         <SearchForm query={query} />
+      </section>
+      <section className="showcase-cont flex flex-col">
+        <h2 className="text-4xl font-semibold">
+          {query ? `Search results for "${query}"` : "All Startups"}
+        </h2>
+        <ul className="mt-4 grid md:grid-cols-3 sm:grid-cols-2 gap-5">
+          {posts?.length > 0 ? (
+            posts.map((post: StartupCardType) => (
+              <StartupCard key={post?._id} post={post} />
+            ))
+          ) : (
+            <p>No Startups Found </p>
+          )}
+        </ul>
       </section>
     </div>
   );
