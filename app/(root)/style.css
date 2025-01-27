@@ -1,0 +1,9 @@
+.hero {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 0;
+  border-bottom: solid 2px white;
+}
